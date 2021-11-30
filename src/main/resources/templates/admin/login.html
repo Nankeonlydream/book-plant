@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>即刻-BOOKPLANTの营地</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/semantic.min.css" th:href="@{/css/semantic.min.css}">
+    <link rel="stylesheet" href="../../static/css/common.css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" href="../../static/css/login/login.css" th:href="@{/css/login/login.css}">
+</head>
+
+<body>
+<svg style="opacity: .6;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#333" fill-opacity="1"
+          d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+</svg>
+<div class="user">
+    <div class="head animate__animated animate__fadeInRight"
+         style="color: #fff;font-family:'STXingkai';font-size: 50px;margin-top: 80px;margin-left: 240px">致你一次
+    </div>
+    <div class="head animate__animated animate__fadeInLeft "
+         style="color: #fff;font-family:'STXingkai';font-size: 50px;margin-top: 100px;text-align: center;margin-left: -120px">
+        危险派对
+    </div>
+</div>
+
+<div class="user " style="display: flex;flex-direction: column;margin-left: 900px">
+    <div class="head animate__animated animate__fadeInRight"
+         style="color: #fff;font-family:'STXingkai';font-size: 50px;margin-top: 80px;margin-left: 50px">去吻碎
+    </div>
+    <div class="head animate__animated animate__fadeInLeft"
+         style="color: #fff;font-family:'STXingkai';font-size: 50px;margin-top: 100px;text-align: center;margin-left: 180px">
+        这相反故事
+    </div>
+</div>
+<div class="ur container animate__animated animate__fadeInDown box-shadow-Xmax">
+    <div class="box login">
+        <div class="form-content">
+            <div class="avtar">
+                <div class="pic"><img src="https://pic.imgdb.cn/item/617e21822ab3f51d914e699b.jpg" alt=""></div>
+            </div>
+            <h1 style="margin-top: -10px">欢迎回来</h1>
+            <form action="#" class="formLogin" method="post" th:action="@{/admin/login}">
+                <div class="ui mini negative message" style="margin-top: -30px" th:unless="${#strings.isEmpty(message)}" th:text="${message}">用户名和密码错误</div>
+                <div>
+                    <i class="fa fa-user"></i>
+                    <input name="username" type="text" placeholder="用户名">
+                </div>
+                <div>
+                    <i class="fa fa-key"></i>
+                    <input name="password" type="password" placeholder="密码">
+                </div>
+                <div class="btn">
+                    <button>登   录</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="../../static/js/semantic.min.js" th:src="@{/js/semantic.min.js}"></script>
+</html>
+<script>
+    let user = document.querySelector(".head");
+
+</script>

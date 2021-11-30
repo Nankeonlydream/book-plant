@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>即刻-BOOKPLANTの营地</title>
+    <link rel="stylesheet" href="../../static/css/semantic.min.css" th:href="@{/css/semantic.min.css}">
+    <link rel="stylesheet" href="../../static/css/common.css" th:href="@{/css/common.css}">
+    <link rel="shortcut icon" href="../../static/favicon.ico" type="image/x-icon" th:href="@{/favicon.ico}">
+    <link rel="stylesheet" href="../../static/css/tags-input/tags-input.css"
+          th:href="@{/css/tags-input/tags-input.css}">
+</head>
+<body>
+
+<!--导航-->
+<nav th:replace="admin/_fragments :: menu(3)" class="gird-header box-shadow-bottom">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item" style="font-weight: bold;font-family: STSong;"><a
+                    style="color: #00B5AD; font-size: 24px" href="#">管理后台</a></h2>
+            <a href="/templates/admin/blogs" class="m-item item m-mobile-hide"><i class="book icon"></i>文章</a>
+            <a href="/templates/admin/types" class=" m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+            <a href="/templates/admin/tags" class="m-item item m-mobile-hide active"><i class="tags icon"></i>标签</a>
+            <a href="/" class="m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+            <div class="right m-item m-mobile-hide menu">
+                <div class="ui dropdown  item">
+                    <div class="text">
+                        <img class="ui avatar image"
+                             src="http://m.imeitou.com/uploads/allimg/2020031310/d2yvmvd5wel.jpeg">
+                        <span>郝捷</span>
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="/templates/admin/logout" class="item">注销</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<!--顶部图片-->
+<div class="m-bg-type_outer box-shadow-bottom" style="width: 100%;height: 40%">
+    <img src="https://pic.imgdb.cn/item/617d7b572ab3f51d91c3569d.jpg" alt="" class="ui m-bg image"
+         style="width: 100%;height: 100%">
+    <div class="m-bg-class_cover">
+        <div class="ui container" style="position: relative ;bottom: -540px;">
+            <div class="m-font-size-title m-right-bottom" align="center" style="font-family:'STXingkai'">标签新增</div>
+            <div class="m-font-size-text-init-title m-margin-top" align="center">命运如同海风——吹着青春的舟飘摇的曲折的渡过了时间的海</div>
+        </div>
+    </div>
+</div>
+<div class="ui attached pointing menu">
+    <div class="ui container">
+        <div class="right menu">
+            <a href="#" th:href="@{/admin/tags/input}" class="active item">新增</a>
+            <a href="#" th:href="@{/admin/tags}" class="teal  item">列表</a>
+        </div>
+    </div>
+</div>
+
+<!--中间内容-->
+<div class="m-container m-padded-tb-big" style="text-align:right;">
+    <div class="ui container">
+        <form action="#" method="post"  th:object="${tag}" th:action="*{id}==null ? @{/admin/tags} : @{/admin/tags/{id}(id=*{id})} "  class="ui form">
+            <div class="fieldA m-opacity" style="text-align:right">
+                <div class="ui left labeled input" style="margin-right:100px">
+                    <label class="ui teal basic label">名称</label>
+                    <input type="text" name="name" placeholder="分类名称" th:value="*{name}" >
+                </div>
+            </div>
+            <div class="ui error message" style="margin-bottom:-113px;margin-top:30px"></div>
+            <div class="ui container" style="margin-top: -37px;
+    text-align:right;width:800px">
+                <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+                <button class="ui teal submit button">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--底部footer-->
+<div th:replace="_fragments :: footer" class="box-shadow-maxs">
+    <footer class="ui inverted vertical segment m-padded-tb-massive m-opacity " style="z-index: -1;">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="../../static/images/index/wechat.png" class="ui rounded image" alt=""
+                                 th:src="@{/images/index/wechat.png}"
+                                 style="width: 110px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">最新博客</h4>
+                    <div id="newblog-container">
+                        <div class="ui inverted link list">
+                            <a href="#" target="_blank" class="item m-text-thin">用户故事（User Story）</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+                    <div class="ui inverted link list">
+                        <p class="m-text-thin m-text-spaced m-opacity-mini">QQ：1418196508</p>
+                        <p class="m-text-thin m-text-spaced m-opacity-mini">微信：haojie3826</p>
+                        <p class="m-text-thin m-text-spaced m-opacity-mini">手机：19113685254</p>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">南柯一梦的博客</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">
+                        👋 励志成为一名优秀的前端程序员</p>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">👀 热衷于编写集成式项目，享受coding</p>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">🌱 PS\PR\EOS80D</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2021 - <span>2022</span> NanKe Designed by
+                HaoJie
+            </p>
+        </div>
+
+    </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="../../static/js/semantic.min.js" th:src="@{/js/semantic.min.js}"></script>
+<script>
+    $('#newblog-container').load(/*/footer/newblog*/"/footer/newblog");
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+
+    $('.ui.form').form({
+        fields: {
+            title: {
+                identifier: 'name',
+                rules: [{
+                    type: 'empty',
+                    prompt: '请输入标签名称'
+                }]
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

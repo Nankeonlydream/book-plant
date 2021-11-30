@@ -1,0 +1,9 @@
+body {
+  background: url("https://pic.imgdb.cn/item/617d713b2ab3f51d91b794e9.jpg") no-repeat fixed;
+  background-size: 100%; }
+  body #table-container tbody tr > td {
+    font-weight: 1000 !important; }
+    body #table-container tbody tr > td a {
+      font-weight: 1000 !important; }
+  body #table-container tfoot > tr > th > div a {
+    font-weight: 1000 !important; }

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>即刻-BOOKPLANTの营地</title>
+    <link rel="stylesheet" href="../static/css/semantic.min.css" th:href="@{/css/semantic.min.css}">
+    <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" href="../static/css/archives/archives.css" th:href="@{/css/archives/archives.css}">
+</head>
+<body class="archivesBody">
+
+<!--导航-->
+<nav th:replace="_fragments :: menu(4)" class="gird-header box-shadow-bottom">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui olive header item" style="font-weight: bold;font-family: STSong;"><a
+                    style="color: #B5CC18; font-size: 24px" href="/">ONLYDREAM</a></h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>流年记</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>时间归档</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="user outline icon"></i>即刻</a>
+            <div class="right m-item item m-mobile-hide">
+                <form name="search" action="#" method="post" target="_blank">
+                    <div class="ui icon inverted transparent input m-margin-tb-tiny">
+                        <input name="query" placeholder="Search...." type="text">
+                        <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<!--顶部图片-->
+<div class="m-bg-type_outer box-shadow-bottom" style="width: 100%;height: 40%">
+    <img src="https://pic.imgdb.cn/item/617d4a5b2ab3f51d91896c0c.png" alt="" class="ui m-bg image"
+         style="width: 100%;height: 100%">
+    <div class="m-bg-class_cover">
+        <div class="ui container" style="position: relative ;bottom: -540px;">
+            <div class="m-font-size-title m-right-bottom" align="center" style="font-family:'STXingkai'">时间归档</div>
+            <div class="m-font-size-text-init-title m-margin-top" align="center">转瞬即逝的相逢与离别，每一个瞬间，我都想要珍惜</div>
+        </div>
+    </div>
+</div>
+
+<!--中间内容-->
+<div class="m-container-small m-padded-tb-big m-opacity" style="height: 800px!important;">
+    <div class="ui container">
+        <!--header-->
+        <div class="box-shadow-maxs" style="margin-bottom: 15px">
+            <div class="ui top attached padded segment">
+                <div class="ui middle aligned two column grid">
+                    <div class="column">
+                        <h3 class="ui teal header">归档</h3>
+                    </div>
+                    <div class="right aligned column">
+                        共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${blogCount}"> 114 </h2> 篇博客
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <th:block th:each="item : ${archiveMap}">
+            <h3 class="ui center aligned header" th:text="${item.key}" style="color: white;font-weight: 600!important;">2017</h3>
+            <div class="box-shadow-maxs">
+                <div class="ui fluid vertical menu">
+                    <a href="#" th:href="@{/blog/blog/{id}(id=${blog.id})}" target="_blank" class="item"
+                       th:each="blog : ${item.value}">
+          <span>
+            <i class="mini teal circle icon"></i><span th:text="${blog.title}">关于刻意练习的清单</span>
+            <div class="ui teal basic left pointing label m-padded-mini "
+                 th:text="${#dates.format(blog.updateTime,'MMMdd')}">9月03</div>
+          </span>
+                        <div class="ui orange basic left pointing label m-padded-mini " th:text="${blog.flag}">原创</div>
+                    </a>
+                </div>
+            </div>
+        </th:block>
+    </div>
+</div>
+
+<br>
+<br>
+
+<!--置顶图标-->
+<div id="toolbar" class="m-padded-tb-large m-fixed m-right-bottom">
+    <a href="#" class="ui center aligned basic segment icon">
+        <svg class="iconDiy" aria-hidden="true">
+            <use xlink:href="#icon-huojian"></use>
+        </svg>
+    </a>
+</div>
+<!--底部footer-->
+<div th:replace="_fragments :: footer" class="box-shadow-maxs">
+    <footer class="ui inverted vertical segment m-padded-tb-massive m-opacity " style="z-index: -1;">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="../static/images/index/wechat.png" th:src="@{/images/index/wechat.png}"
+                                 class="ui rounded image" alt=""
+                                 style="width: 110px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">最新博客</h4>
+                    <div id="newblog-container">
+                        <div class="ui inverted link list">
+                            <a href="#" target="_blank" class="item m-text-thin">用户故事（User Story）</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+                    <div class="ui inverted link list">
+                        <p class="m-text-thin m-text-spaced m-opacity-mini">QQ：1418196508</p>
+                        <p class="m-text-thin m-text-spaced m-opacity-mini">微信：haojie3826</p>
+                        <p class="m-text-thin m-text-spaced m-opacity-mini">手机：19113685254</p>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">南柯一梦的博客</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">
+                        👋 励志成为一名优秀的前端程序员</p>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">👀 热衷于编写集成式项目，享受coding</p>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">🌱 PS\PR\EOS80D</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2021 - <span>2022</span> NanKe Designed by
+                HaoJie
+            </p>
+        </div>
+
+    </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="../static/js/semantic.min.js" th:src="@{/js/semantic.min.js}"></script>
+<script>
+    $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+</script>
+</body>
+</html>

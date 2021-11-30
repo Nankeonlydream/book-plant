@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>即刻-NANKEの营地</title>
+    <link rel="stylesheet" href="../static/css/semantic.min.css" th:href="@{/css/semantic.min.css}">
+    <link href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/index/index.css" th:href="@{/css/index/index.css}">
+    <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+    <script src="../static/js/iconfont.js" th:src="@{/js/iconfont.js}"></script>
+    <link rel="shortcut icon" href="../static/favicon.ico" th:href="@{/favicon.ico}" type="image/x-icon">
+</head>
+<body>
+<!--顶部图片-->
+<div class="m-bg-class_outer box-shadow-bottom" style="width: 100%;height: 800px">
+    <img src="https://pic.imgdb.cn/item/617d30652ab3f51d9170e296.jpg" alt="" class="ui m-bg image"
+         style="width: 100%;height: 100%"/>
+    <div class="m-bg-class_cover" align="center">
+        <div class="m-margin-top-maxx" align="center">
+            <img class="ui circular image animate__animated animate__fadeInDown" align="center" src="https://pic.imgdb.cn/item/617e21822ab3f51d914e699b.jpg"
+                 style="width: 150px;height: 150px;" alt="">
+        </div>
+        <div class="m-font-size-title-mediul animate__animated animate__jackInTheBox" align="center">ONLYDREAM</div>
+
+        <div align="center">
+            <a href="#" class="ui phone volume circular icon button animate__animated animate__rollIn"><i class="phone volume icon"></i></a>
+            <a href="#" class="ui wechat circular icon button animate__animated animate__rollIn"><i class="weixin icon"></i></a>
+            <a href="#" class="ui qq circular icon button animate__animated animate__rollIn" data-content="1418196508" data-position="bottom center"><i
+                    class="qq icon"></i></a>
+            <a href="https://github.com/Nankeonlydream" target="_blank" class="ui github circular icon button animate__animated animate__rollIn"
+               data-content="GitHub" data-position="bottom center"><i class="github icon"></i></a>
+            <a href="https://www.csdn.net/" target="_blank" class="ui csdn circular icon button animate__animated animate__rollIn" data-content="CSDN"
+               data-position="bottom center"><i class="copyright outline icon"></i></a>
+            <a href="#" class="ui email circular icon button animate__animated animate__rollIn" data-content="haojie@163.com"
+               data-position="bottom center"><i
+                    class="envelope  icon"></i></a>
+        </div>
+
+        <div class="ui tencent-qr flowing popup transition hidden">
+            <div align="center">手机号：19113685254</div>
+        </div>
+        <div class="ui wechat-qr flowing popup transition hidden">
+            <img src="https://pic.imgdb.cn/item/617e8c522ab3f51d919d9696.jpg" alt=""
+                 class="ui rounded image" style="width: 110px">
+            <div align="center">微信</div>
+        </div>
+        <div class="ui qq-qr flowing popup transition hidden">
+            <img src="https://pic.imgdb.cn/item/617e8ccf2ab3f51d919e2097.jpg" alt="" class="ui rounded image"
+                 style="width: 110px;padding: 5px">
+            <div align="center">QQ</div>
+        </div>
+
+        <div class="m-font-size-text animate__animated animate__flipInX" align="center">欢迎来到我的世界，梦想是一颗星，夜空中最亮的那颗</div>
+        <hr style="width: 40%;">
+        <h5 class="m-font-size-text-init-title m-margin-top-large animate__animated animate__fadeInLeftBig">“大圣，此去欲何?”</h5>
+        <h5 class="m-font-size-text-init-title animate__animated animate__fadeInRightBig">“踏南天，碎凌霄”</h5>
+        <h5 class="m-font-size-text-init-title animate__animated animate__fadeInLeftBig">“若一去不回……”</h5>
+        <h5 class="m-font-size-text-init-title animate__animated animate__fadeInRightBig">“便一去不回”</h5>
+        <div id="waypoint" class="ui m-margin-top-large" align="center">
+            <a href="/" class="ui circular icon button m-opacity-small m-item item m-mobile-hide m-index-btn animate__animated animate__bounceInUp"
+               ><i
+                    class="home icon"></i>&nbsp;&nbsp;首页</a>
+            <a href="/types/-1" class="ui circular icon button m-opacity-small m-item item m-mobile-hide m-index-btn animate__animated animate__bounceInUp"
+               ><i
+                    class="clone outline icon"></i>&nbsp;&nbsp;分类</a>
+            <a href="/tags/-1" class="ui circular icon button m-opacity-small m-item item m-mobile-hide animate__animated animate__bounceInUp"
+               ><i class="music icon"></i>&nbsp;&nbsp;流年记</a>
+            <a href="/archives" class="ui circular icon button m-opacity-small m-item item m-mobile-hide animate__animated animate__bounceInUp"
+               ><i
+                    class="coffee icon"></i>&nbsp;&nbsp;&nbsp;时间归档</a>
+            <a href="/about" class="ui circular icon button m-opacity-small m-item item m-mobile-hide animate__animated animate__bounceInUp"
+               ><i
+                    class="info icon"></i>&nbsp;关于我</a>
+            <a href="/admin" class="ui circular icon button m-opacity-small m-item item m-mobile-hide animate__animated animate__bounceInUp"
+               ><i
+                    class="user outline icon"></i>&nbsp;&nbsp;即刻</a>
+        </div>
+        <div class="hiddenDiv"></div>
+    </div>
+
+</div>
+<!--导航-->
+<nav id="nav" class="gird-header box-shadow-bottom" style="display: none">
+    <div class="ui m-container-mini-m">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui olive header item" style="font-family: STSong,serif">BOOKPLANT</h2>
+            <a href="/" class="active m-item item"><i class="home icon"></i>首页</a>
+            <a href="/types/-1" class="m-item item"><i class="clone outline icon"></i>分类</a>
+            <a href="/tags/-1" class="m-item item"><i class="music icon"></i>流年记</a>
+            <a href="/archives" class="m-item item"><i class="coffee icon"></i>时间归档</a>
+            <a href="/about" class="m-item item"><i class="info icon"></i>关于我</a>
+            <a href="/admin" class="m-item item"><i class="user outline icon"></i>即刻</a>
+            <div class="right m-item item">
+                <form name="search" action="/search" method="post" target="_blank">
+                    <div class="ui icon transparent input m-margin-tb-tiny" style="color: white">
+                        <input style="color: white" type="text" name="query" placeholder="Search...." value="">
+                        <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-hide" style="display: none">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<!--中间部分-->
+<div class="m-container m-padded-tb-big m-opacity">
+    <div class="ui container">
+        <div class="ui stackable grid">
+            <!--左边博客列表-->
+            <div class="eleven wide column">
+                <!--header-->
+                <div class="ui vertical segment">
+                    <div class="box-shadow-maxs">
+                        <div class="ui secondary segment">
+                            <div class="ui two column grid">
+                                <div class="column" style="padding-left: 2em;">
+                                    <h3 class="ui teal header" style="margin-top: 1px">热榜</h3>
+                                </div>
+                                <div class="right aligned column"
+                                     style="margin-top: -2px;font-size: 19px;padding-right: 2em;">
+                                    共 <h2 class="ui orange header m-inline-block m-text-thin"
+                                          th:text="${page.totalElements}"> 14 </h2> 篇
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--content-->
+                <div class="ui vertical segment">
+                    <div class="box-shadow-maxs" th:each="blog : ${page.content}">
+                        <div class="ui padded segment m-padded-tb-large m-opacity" style="margin-bottom: 15px">
+                            <div class="ui middle aligned mobile reversed stackable grid">
+                                <div class="eleven wide column">
+                                    <h3 class="ui header"><a href="#" th:href="@{/blog/blog/{id}(id=${blog.id})}"
+                                                             target="_blank" class="m-black m-title-font"
+                                                             th:text="${blog.title}">你真的理解什么是财富自由吗?</a></h3>
+                                    <p class="m-text m-margin-top-max" th:text="|${blog.description}......|">
+                                        正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
+                                    <div class="ui m-margin-top-max grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://pic.imgdb.cn/item/617e21822ab3f51d914e699b.jpg" alt=""
+                                                         class="ui avatar image">
+                                                    <div class="content"><a href="#" class="header"
+                                                                            th:text="${blog.user.nickname}">郝捷</a></div>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="calendar icon"
+                                                       style="font-weight: bold !important;"></i><span
+                                                        style="margin-left: 4px; display: inline-block;vertical-align: middle; margin-top:2px;text-align: center;font-weight: bold !important;"
+                                                        th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">
+                          2021-6-22</span>
+                                                </div>
+                                                <div class="item">
+                                                    <i class="eye icon" style="font-weight: bold !important;"></i>
+                                                    <span
+                                                            style="display: inline-block;vertical-align: middle;margin-top:2px; text-align: center;font-weight: bold !important;"
+                                                            th:text="${blog.views}">2342</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right aligned five wide column">
+                                            <a href="#" target="_blank"
+                                               class="ui teal basic label m-padded-tiny m-text-thin"
+                                               style="font-size: 13px;margin-top: 13px"
+                                               th:text="${blog.type.name}">认知升级</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="five wide column">
+                                    <a href="#" target="_blank" th:href="@{/blog/blog/{id}(id=${blog.id})}">
+                                        <img src="https://unsplash.it/800/450?image=1005"
+                                             th:src="@{${blog.firstPicture}}" alt=""
+                                             class="ui rounded image">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--footer-->
+                <div class="box-shadow-maxs" style="margin-top: -15px;margin-bottom: 30px">
+                    <div class="ui bottom attached segment">
+                        <div class="ui middle aligned two column grid">
+                            <div class="column">
+                                <a href="#" th:href="@{/(page=${page.number}-1)}" th:unless="${page.first}"
+                                   class="ui mini teal basic button">上一页</a>
+                            </div>
+                            <div class="right aligned column">
+                                <a href="#" th:href="@{/(page=${page.number}+1)}" th:unless="${page.last}"
+                                   class="ui mini teal basic button">下一页</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--右边的top-->
+            <div class="five wide column" style="margin-top:2px;margin-bottom: 40px">
+                <!--分类-->
+                <div class="box-shadow-maxs" style="margin-bottom: -15px">
+                    <div class="ui segments">
+                        <div class="ui secondary segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="idea icon"></i>分类
+                                </div>
+                                <div class="right aligned column" style="font-size: 15px">
+                                    <a href="#" th:href="@{types/-1}" target="_blank">更多 <i
+                                            class="angle double right icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui teal segment">
+                            <div class="ui fluid vertical menu">
+                                <a href="#" th:href="@{/types/{id}(id=${type.id})}" target="_blank" class="item"
+                                   th:each="type : ${types}">
+                                    <span th:text="${type.name}">学习日志</span>
+                                    <div class="ui teal basic left pointing label"
+                                         th:text="${#arrays.length(type.blogs)}">13
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--标签-->
+                <div class="box-shadow-maxs" style="margin-bottom: -15px">
+                    <div class="ui segments m-margin-top-large">
+                        <div class="ui secondary segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="tags icon"></i>标签
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui teal segment">
+                            <div
+                               class="ui teal basic left pointing label m-margin-tb-tiny" th:each="tag : ${tags}">
+                                <span th:text="${tag.name}">方法论</span>
+                                <div class="detail" th:text="${#arrays.length(tag.blogs)}">23</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--最新推荐-->
+                <div class="box-shadow-maxs">
+                    <div class="ui segments m-margin-top-large">
+                        <div class="ui secondary segment ">
+                            <i class="bookmark icon"></i>最新推荐
+                        </div>
+                        <div class="ui segment" th:each="blog : ${recommendBlogs}">
+                            <a href="#" th:href="@{/blog/blog/{id}(id=${blog.id})}" target="_blank"
+                               class="m-black m-text-thin" th:text="${blog.title}">用户故事（User Story）</a>
+                        </div>
+                    </div>
+                </div>
+                <!--二维码-->
+                <div id="abc">
+                    <div style="margin-bottom: 30px">
+                        <h4 class="ui horizontal divider header m-margin-top-large" style="color: white">扫码关注我</h4>
+                    </div>
+                    <div class="ui centered card" style="width: 11em;">
+                        <div class="box-shadow-maxs">
+                            <img src="https://pic.imgdb.cn/item/617e8d632ab3f51d919eb9b1.jpg" alt=""
+                                 class="ui rounded image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--置顶图标-->
+<div id="toolbar" class="m-padded m-fixed m-right-bottom" style="display: none">
+    <a href="#" class="ui center aligned basic segment icon">
+        <svg class="iconHuoJian" aria-hidden="true">
+            <use xlink:href="#icon-huojian"></use>
+        </svg>
+    </a>
+</div>
+<!--底部footer-->
+<div th:replace="_fragments :: footer" class="box-shadow-maxs">
+    <footer class="ui inverted vertical segment m-padded-tb-massive m-opacity " style="z-index: -1;">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="https://pic.imgdb.cn/item/617e8dae2ab3f51d919f0791.jpg" class="ui rounded image" alt=""
+                                 style="width: 110px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">最新博客</h4>
+                    <div id="newblog-container" class="ui inverted link list">
+                        <div th:fragment="newblogList">
+                            <p class="item m-text-thin" th:each="blog : ${newblogs}"
+                               th:text="${blog.title}">用户故事（User Story）</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+                    <div class="ui inverted link list">
+                        <p class="m-text-thin m-text-spaced m-opacity-mini" th:text="#{index.qq}">QQ：1418196508</p>
+                        <p class="m-text-thin m-text-spaced m-opacity-mini" th:text="#{index.wechat}">微信：haojie3826</p>
+                        <p class="m-text-thin m-text-spaced m-opacity-mini" th:text="#{index.phone}">手机：19113685254</p>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">南柯一梦的博客</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini" th:text="#{index.firstSentence}">
+                        👋 励志成为一名优秀的前端程序员</p>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini" th:text="#{index.secondSentence}">👀
+                        热衷于编写集成式项目，享受coding</p>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini" th:text="#{index.thirdSentence}">🌱
+                        PS\PR\EOS80D</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2020 - <span
+                    th:text="${#dates.year(#dates.createNow())}">2021</span> NanKe Designed by HaoJie
+            </p>
+        </div>
+    </footer>
+</div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../static/js/semantic.min.js" th:src="@{/js/semantic.min.js}"></script>
+<script src="../static/css/lib/waypoints/jquery.waypoints.min.js"
+        th:src="@{/css/lib/waypoints/jquery.waypoints.min.js}"></script>
+<script>
+    $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+    // 显示消息
+    $('#payButton').popup({
+        popup: $('.payQR.popup'),
+        on: 'click',
+        position: 'top right'
+    });
+
+    const waypointToTop = new Waypoint({
+        element: document.getElementById('waypoint'),
+        handler: function (direction) {
+            if (direction === 'down') {
+                $('#toolbar').show(100);
+            } else {
+                $('#toolbar').hide(500);
+            }
+        }
+    })
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-show');
+    });
+
+    // 显示手机号
+    $('.ui.phone.volume').popup({
+        popup: $('.tencent-qr'),
+        position: 'bottom center'
+    });
+
+    // 显示微信
+    $('.wechat').popup({
+        popup: $('.wechat-qr'),
+        position: 'bottom center'
+    });
+
+    // 显示QQ
+    $('.qq').popup({
+        popup: $('.qq-qr'),
+        position: 'bottom center'
+    });
+
+    // 显示邮箱
+    $('.email').popup();
+
+    // 显示CSDN
+    $('.csdn').popup();
+
+    // 显示github
+    $('.github').popup();
+
+    // 导航栏显示
+    const waypoint = new Waypoint({
+        element: document.getElementById('waypoint'),
+        handler: function (direction) {
+            if (direction === 'down') {
+                $('#nav').show(500);
+            } else {
+                $('#nav').hide(500);
+            }
+        }
+    })
+</script>
+</body>
+</html>

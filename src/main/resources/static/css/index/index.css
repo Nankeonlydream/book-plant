@@ -1,0 +1,22 @@
+@charset "UTF-8";
+body {
+  background: url("https://pic.imgdb.cn/item/617d30862ab3f51d9170fadf.png") no-repeat fixed 100% 100%; }
+  body .m-font-size-title-mediul {
+    font-size: 30px;
+    color: #ffffff;
+    font-family: 'STSong';
+    line-height: 60px;
+    margin-top: 10px; }
+  body .m-font-size-text {
+    font-size: 30px;
+    color: #ffffff;
+    font-family: 新宋体;
+    margin-top: 10px; }
+  body .ui.button {
+    margin: 0 .6em 0 0; }
+  body .iconHuoJian {
+    width: 4em;
+    height: 4em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden; }

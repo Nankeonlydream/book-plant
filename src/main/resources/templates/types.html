@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>即刻-BOOKPLANTの营地</title>
+    <link rel="stylesheet" href="../static/css/semantic.min.css" th:href="@{/css/semantic.min.css}">
+    <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" href="../static/css/type/types.css" th:href="@{/css/type/types.css}">
+    <script src="../static/js/iconfont.js" th:src="@{/js/iconfont.js}"></script>
+    <link rel="shortcut icon" href="../static/favicon.ico" th:href="@{/favicon.ico}" type="image/x-icon">
+</head>
+<body class="typesBody">
+
+<!--导航-->
+<nav th:replace="_fragments :: menu(2)" class="gird-header box-shadow-bottom">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui olive header item" style="font-weight: bold;font-family: STSong;"><a
+                    style="color: #B5CC18; font-size: 24px" href="/">BOOKPLANT</a></h2>
+            <a href="#" class="m-item item m-mobile-hide"><i
+                    class="home icon"></i>首页</a>
+            <a href="#" class="m-item item m-mobile-hide"><i
+                    class="idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i
+                    class="tags icon"></i>流年记</a>
+            <a href="#" class="m-item item m-mobile-hide"><i
+                    class="clone icon"></i>时间归档</a>
+            <a href="#" class="m-item item m-mobile-hide"><i
+                    class="info icon"></i>关于我</a>
+            <a href="#" class="m-item item m-mobile-hide"><i
+                    class="user outline icon"></i>即刻</a>
+            <div class="right m-item item m-mobile-hide">
+                <form name="search" action="#" method="post" target="_blank">
+                    <div class="ui icon inverted transparent input m-margin-tb-tiny">
+                        <input type="text" name="query" placeholder="Search....">
+                        <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<!--顶部图片-->
+<div class="m-bg-type_outer box-shadow-bottom" style="width: 100%;height: 40%">
+    <img src="https://pic.imgdb.cn/item/617d469d2ab3f51d91857766.jpg" alt="" class="ui m-bg image"
+         style="width: 100%;height: 100%">
+    <div class="m-bg-class_cover">
+        <div class="ui container" style="position: relative ;bottom: -540px;">
+            <div class="m-font-size-title m-right-bottom" align="center" style="font-family:'STXingkai'">文章分类</div>
+            <div class="m-font-size-text-init-title m-margin-top" align="center">对待生命，不妨大胆一点，因为我们终究要失去它</div>
+        </div>
+    </div>
+</div>
+
+<!--中间内容-->
+<div class="m-container-type m-padded-tb-big animated fadeIn m-opacity">
+    <div class="ui container" style="margin-bottom: -5px">
+        <!--header-->
+        <div class="box-shadow-maxs">
+            <div class="ui top attached segment" style="padding-left:3em;padding-right:3em;">
+                <div class="ui middle aligned two column grid">
+                    <div class="column">
+                        <h3 class="ui teal header">分类</h3>
+                    </div>
+                    <div class="right aligned column">
+                        共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${#arrays.length(types)}">17</h2> 个
+                    </div>
+                </div>
+            </div>
+            <div class="ui attached segment m-padded-tb-large" style="padding: 3em">
+                <div class="ui labeled button m-margin-tb-tiny" th:each="type : ${types}">
+                    <a href="#" th:href="@{/types/{id}(id=${type.id})}" class="ui basic button" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${type.name}">文学</a>
+                    <div class="ui basic left pointing label" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${#arrays.length(type.blogs)}">4</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-shadow-maxs" style="margin-top: 25px">
+            <div class="ui top attached teal segment ">
+                <div class="ui padded vertical segment box-shadow-maxs m-padded-tb-large" th:each="blog : ${page.content}">
+                    <div class="ui middle aligned mobile reversed stackable grid">
+                        <div class="eleven wide column">
+                            <h3 class="ui header"><a href="#" th:href="@{/blog/blog/{id}(id=${blog.id})}" target="_blank" class="m-black m-title-font" th:text="${blog.title}">《追风筝的人》</a>
+                            </h3>
+                            <p class="m-text" th:text="|${blog.description}......|">
+                                《追风筝的人》是美籍阿富汗裔作家卡勒德·胡赛尼的第一部小说，也是第一部由阿富汗裔作家创作的英文小说。小说于2003年由河源出版社在美国出版，以第一人称讲述了来自阿富汗首都喀布尔富人区的普什图少年阿米尔和他的童年好友，父亲的哈扎拉仆人哈桑之间的故事。
+                                ......</p>
+                            <div class="ui grid">
+                                <div class="eleven wide column">
+                                    <div class="ui mini horizontal link list">
+                                        <div class="item">
+                                            <img src="https://m.imeitou.com/uploads/allimg/2020031310/d2yvmvd5wel.jpeg" th:src="@{${blog.user.avatar}}"
+                                                 alt="" class="ui avatar image">
+                                            <div class="content"><a href="#" class="header" th:text="${blog.user.nickname}">郝捷</a></div>
+                                        </div>
+                                        <div class="item">
+                                            <i class="calendar icon"></i><span
+                                                style="margin-left: 4px; display: inline-block;vertical-align: middle; margin-top:2px;text-align: center" th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2021-06-26</span>
+                                        </div>
+                                        <div class="item">
+                                            <i class="eye icon"></i> <span
+                                                style="display: inline-block;vertical-align: middle;margin-top:2px; text-align: center" th:text="${blog.views}">6</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right aligned five wide column">
+                                    <a href="#" target="_blank" style="margin-top: 13px;font-size: 13px"
+                                       class="ui teal basic label m-padded-tiny m-text-thin" th:text="${blog.type.name}">文学</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="five wide column">
+                            <a href="#" th:href="@{/blog/blog/{id}(id=${blog.id})}" target="_blank">
+                                <img src="https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2020%2F1204%2F2454382dj00qkt8p70014c000ht00b5m.jpg&amp;thumbnail=650x2147483647&amp;quality=80&amp;type=jpg" th:src="@{${blog.firstPicture}}"  alt="" class="ui rounded image">
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--footer-->
+        <div class="box-shadow-maxs">
+            <div class="ui bottom attached segment" th:if="${page.totalPages}>1">
+                <div class="ui middle aligned two column grid">
+                    <div class="column">
+                        <a href="#" th:href="@{'/types/'+${activeTypeId}(page=${page.number}-1)}"  th:unless="${page.first}" class="ui mini teal basic button">上一页</a>
+                    </div>
+                    <div class="right aligned column">
+                        <a href="#" th:href="@{'/types/'+${activeTypeId}(page=${page.number}+1)}"  th:unless="${page.last}" class="ui mini teal basic button">下一页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<!--置顶图标-->
+<div id="toolbar" class="m-padded-tb-large m-fixed m-right-bottom">
+    <a href="#" class="ui center aligned basic segment icon">
+        <svg class="iconDiy" aria-hidden="true">
+            <use xlink:href="#icon-huojian"></use>
+        </svg>
+    </a>
+</div>
+<!--底部footer-->
+<div th:replace="_fragments :: footer" class="box-shadow-maxs">
+    <footer class="ui inverted vertical segment m-padded-tb-massive m-opacity " style="z-index: -1;">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="../static/images/index/wechat.png" class="ui rounded image" alt=""
+                                 th:src="@{/images/index/wechat.png}"
+                                 style="width: 110px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">最新博客</h4>
+                    <div id="newblog-container">
+                        <div class="ui inverted link list">
+                            <a href="#" target="_blank" class="item m-text-thin">用户故事（User Story）</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+                    <div class="ui inverted link list">
+                        <p  class="m-text-thin m-text-spaced m-opacity-mini">QQ：1418196508</p>
+                        <p class="m-text-thin m-text-spaced m-opacity-mini">微信：haojie3826</p>
+                        <p  class="m-text-thin m-text-spaced m-opacity-mini">手机：19113685254</p>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">南柯一梦的博客</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">
+                        👋 励志成为一名优秀的前端程序员</p>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">👀 热衷于编写集成式项目，享受coding</p>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">🌱 PS\PR\EOS80D</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2021 - <span>2022</span> NanKe Designed by
+                HaoJie
+            </p>
+        </div>
+
+    </footer>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../static/js/semantic.min.js" th:src="@{/js/semantic.min.js}"></script>
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+    $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+</script>
+</body>
+</html>

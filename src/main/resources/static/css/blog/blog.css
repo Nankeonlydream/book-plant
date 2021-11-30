@@ -1,0 +1,33 @@
+body {
+  background: url("https://pic.imgdb.cn/item/617d31b62ab3f51d91721855.jpg") no-repeat fixed;
+  background-size: 100%;
+}
+
+a{
+  color: #969798;
+}
+
+body .ui .container .item{
+  margin-right: 5px!important;
+}
+
+#content p{
+  font-size: 16px!important;
+  font-family: 微软雅黑, serif !important;
+}
+body .title-article-i {
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: -3px!important;
+  margin-right: 3px!important;
+}
+
+body .title-article-span {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.list span {
+  color: #ffffff;
+  font-size: 16px !important;
+}
